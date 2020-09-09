@@ -24,6 +24,7 @@ en:
       votes:
         create:
           error: There was a problem voting the comment.
+      view: View
     components:
       add_comment_form:
         account_message: <a href="%{sign_in_url}">Sign in with your account</a> or <a href="%{sign_up_url}">sign up</a> to add your comment.
