@@ -1,0 +1,153 @@
+ja: 
+  activemodel: 
+    attributes: 
+      project: 
+        budget: 予算
+        decidim_category_id: カテゴリー
+        decidim_scope_id: 範囲
+        description: 説明
+        proposal_ids: 関連提案
+        title: タイトル
+  activerecord: 
+    models: 
+      decidim/budgets/project: 
+        one: プロジェクト
+        other: プロジェクト
+  decidim: 
+    budgets: 
+      actions: 
+        attachment_collections: フォルダ
+        attachments: 添付ファイル
+        confirm_destroy: 本当にこのプロジェクトを削除しますか？
+        destroy: 削除
+        edit: 編集
+        import: プロジェクトへの提案書のインポート
+        new: 新プロジェクト
+        preview: プレビュー
+        title: アクション
+      admin: 
+        models: 
+          project: 
+            name: プロジェクト
+        projects: 
+          create: 
+            invalid: このプロジェクトの作成には問題がありました
+            success: プロジェクトの作成に成功
+          destroy: 
+            success: プロジェクトの削除に成功
+          edit: 
+            title: プロジェクトの編集
+            update: 更新情報
+          index: 
+            finished_orders: 終了した投票
+            pending_orders: 未決票
+            title: プロジェクト
+          new: 
+            create: 作成
+            title: 新プロジェクト
+          update: 
+            invalid: このプロジェクトの更新に問題がありました
+            success: プロジェクトが正常に更新されました
+        proposals_imports: 
+          create: 
+            invalid: 企画書のプロジェクトへのインポートに問題があった
+            success: "%{number}の提案は正常にプロジェクトにインポートされます。"
+          new: 
+            create: プロジェクトへの提案書のインポート
+            no_components: この参加型の空間には、プロジェクトに取り入れるための提案の構成要素は他にはありません。
+            select_component: コンポーネントを選択してください
+      admin_log: 
+        project: 
+          create: "%{user_name}は、%{space_name}空間に%{resource_name}プロジェクトを作成しました。"
+          delete: "%{user_name}は%{space_name}スペースの%{resource_name}プロジェクトを削除しました。"
+          update: "%{user_name}は%{space_name}空間の%{resource_name}プロジェクトを更新しました。"
+      models: 
+        project: 
+          fields: 
+            title: タイトル
+      projects: 
+        budget_confirm: 
+          are_you_sure: 同意しますか？一度確認した投票は変更できません。
+          cancel: キャンセル
+          confirm: 確認
+          description: これらは、予算の一部として選択したプロジェクトです。
+          title: 確定投票
+        budget_excess: 
+          close: クローズ
+          description: このプロジェクトは予算の上限を超えているため、追加できません。必要であれば、すでに追加するプロジェクトを選択しているプロジェクトを削除したり、好みで投票することもできます。
+          ok: 宜しい
+          title: 最大予算を超えた
+        budget_summary: 
+          are_you_sure: 本当に投票を取りやめますか？
+          assigned: 割り当てられた。
+          cancel_order: 票を消してやり直す
+          checked_out: 
+            description: もう予算に投票したんですね。気が変わったのであれば、%{cancel_link}。
+            title: 予算案採決完了
+          description: どのようなプロジェクトに予算を配分すべきだと思いますか？欲しいプロジェクトに最低でも%{minimum_budget}を割り当て、予算を決めるためにあなたの好みで投票してください。
+          title: 予算を決める
+        count: 
+          projects_count: 
+            one: 1プロジェクト
+            other: "%{count}プロジェクト"
+        filters: 
+          category: カテゴリー
+          scope: 範囲
+          search: 検索
+        filters_small_view: 
+          close_modal: クローズモーダル
+          filter: フィルター
+          filter_by: でフィルタリング
+          unfold: 展開
+        order_progress: 
+          vote: 投票
+        order_selected_projects: 
+          remove: 除去
+          selected_projects: 
+            one: 選定プロジェクト
+            other: 選定プロジェクト
+          view: ビュー
+        project: 
+          add: 追加
+          count: 
+            one: 1つのサポート
+            other: "%{count}はサポートしています。"
+          remove: 除去
+          view: ビュー
+        project_budget_button: 
+          add: 追加
+          added: 追加された
+        show: 
+          budget: 予算
+          view_all_projects: すべてのプロジェクトを見る
+    components: 
+      budgets: 
+        actions: 
+          vote: 投票
+        name: 予算
+        settings: 
+          global: 
+            announcement: 発表
+            comments_enabled: コメントを有効にする
+            projects_per_page: ページごとのプロジェクト
+            resources_permissions_enabled: 会議ごとにアクションの権限を設定可能
+            total_budget: 総予算
+            vote_threshold_percent: 投票率
+          step: 
+            announcement: 発表
+            comments_blocked: コメントがブロックされている
+            show_votes: 票を表示する
+            votes_enabled: 投票を有効にする
+    orders: 
+      checkout: 
+        error: あなたの投票の処理に問題がありました
+        success: あなたの投票は正常に受理されました
+      destroy: 
+        error: 投票の取り消しに問題がありました
+        success: あなたの投票は正常に取り消されました
+    resource_links: 
+      included_proposals: 
+        project_proposal: 本事業に含まれるプロポーザル。
+  index: 
+    confirmed_orders_count: 投票数
+  total_budget: 総予算

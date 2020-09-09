@@ -1,0 +1,151 @@
+ja: 
+  activemodel: 
+    attributes: 
+      sortition: 
+        additional_info: 並び替え情報
+        decidim_category_id: ドローを適用したい提案のセットのカテゴリ
+        decidim_proposals_component_id: プロポーザルの設定
+        dice: ダイスを転がした結果。6面ダイスを転がすか、1から6までの数字を生成する別のランダムな方法を探して、ここに何人かの証人の前で結果の数字を入力します。これは結果のランダム性の質と保証に貢献します。
+        target_items: 当選させたいプロポーザルの数（あらかじめ選択したプロポーザル群の中から抽選で当選させたいプロポーザルの数を示す
+        title: タイトル
+        witnesses: 目撃者
+    models: 
+      decidim/sortitions/create_sortition_event: 並び替え
+  activerecord: 
+    models: 
+      decidim/sortitions/sortition: 
+        one: 並び替え
+        other: 並び替え
+  decidim: 
+    components: 
+      sortitions: 
+        name: 並び替え
+        settings: 
+          global: 
+            comments_enabled: コメントを有効にする
+    events: 
+      sortitions: 
+        sortition_created: 
+          email_intro: 追いかけている「%{participatory_space_title}」にソート「%{resource_title}」が追加されました。
+          email_outro: "%{participatory_space_title}」をフォローしているため、この通知が届いています。前のリンクからアンフォローできます。"
+          email_subject: "%{participatory_space_title}に新しいソートが追加されました。"
+          notification_title: ソートション <a href="%{resource_path}">%{resource_title}</a> が %{participatory_space_title} に追加されました。
+    pages: 
+      home: 
+        statistics: 
+          sortitions_count: 並び替え
+    participatory_processes: 
+      statistics: 
+        sortitions_count: 並び替え
+    sortitions: 
+      admin: 
+        actions: 
+          destroy: ソートティションのキャンセル
+          edit: 編集
+          new: 新しいソート
+          show: 並び替えの詳細
+        models: 
+          sortition: 
+            fields: 
+              category: カテゴリー
+              created_at: 作成日
+              decidim_proposals_component: プロポーザルコンポーネント
+              dice: サイコロ
+              reference: 参照
+              request_timestamp: 描画時間
+              seed: чиохнР
+              target_items: 選択する項目
+              title: タイトル
+            name: 
+              one: 並び替え
+              other: 並び替え
+        sortitions: 
+          confirm_destroy: 
+            confirm_destroy: 本当にこのソートをキャンセルしますか？
+            destroy: ソートティションのキャンセル
+            title: ソーションのキャンセル
+          create: 
+            error: 新しいソートの作成に問題がありました。
+            success: ソーションの作成に成功
+          destroy: 
+            error: ソートをキャンセルすることはできません。
+            success: ソーションのキャンセルに成功
+          edit: 
+            title: 並び替えに関する情報を更新する
+            update: 更新情報
+          form: 
+            all_categories: すべてのカテゴリ
+            select_proposal_component: セットされた提案を選択します。
+            title: 提案のための新しいソート
+          index: 
+            title: 並び替え
+          new: 
+            confirm: 次のボタンを押すと、Decidimは日付と時間（秒単位の精度で）を記録し、サイコロを振ると、この情報はランダムな選択を生成するために使用されます。ボタンをクリックすると、この抽選結果が公開され、このフォームに入力されたデータと一緒に変更することはできません。
+            create: 作成
+            title: 新しいソート
+          show: 
+            selected_proposals: 抽選で選ばれたプロポーザル
+          update: 
+            error: ソーションの更新に問題がありました。
+            success: ソーションの更新に成功しました
+      admin_log: 
+        sortition: 
+          create: "%{user_name}は、%{space_name}で%{resource_name}ソリティションを作成しました。"
+          delete: "%{user_name}は%{space_name}の%{resource_name}ソートをキャンセルしました。"
+          update: "%{user_name} が %{space_name} の %{resource_name} ソートティションを更新しました。"
+      sortitions: 
+        count: 
+          proposals_count: 
+            one: 1æ¡ˆ
+            other: "%{count}の提案"
+        filters: 
+          active: アクティブ
+          all: すべての
+          cancelled: キャンセル
+          category: カテゴリー
+          category_prompt: カテゴリを選択してください
+          search: 検索
+          state: ステータス
+        filters_small_view: 
+          close_modal: クローズモーダル
+          filter: フィルター
+          filter_by: でフィルタリング
+          unfold: 展開
+        linked_sortitions: 
+          selected_proposals: 選定された提案
+        orders: 
+          label: 並べ替えの順序を指定します。
+          random: ランダム
+          recent: 最近の
+        results_count: 
+          count: 
+            one: せんこうあん
+            other: せんこうあん
+        show: 
+          algorithm: ソーションのアルゴリズムコード
+          any_category: 軒並み
+          cancelled: キャンセルされたソート
+          candidate_proposal_ids: 並び替え提案の順番とID
+          candidate_proposals_info: 以下のID（太字）で、以下の提案（%{category_label}）の中から仕分けを行いました。  
+          category: "%{category}カテゴリより"
+          dice_result: (1) サイコロの結果
+          introduction: このページには、%{reference}のソート結果が含まれています。このソートにより、%{target_items}の結果は、以下のように表示されているプロポーザルのセットからランダムに等確率で選択されています。結果とともに、このページに表示されている情報は、保証を最大化し、結果を再現するために必要なすべての情報を提供しています。このソートの品質の鍵となるのは、サイコロの転がし（目撃者による検証）による二重のランダム性と、ランダムな選択を生成するアルゴリズムの入力となるソートの正確な時間です。ソーションのタイムシードは、人間がコントロールすることが不可能な秒単位の正確さを持っているため、公平な結果を保証するための二重の「コントロール不可能な」入力を提供しています。  
+          mathematical_result: 結果(1)×(2)
+          proposals_selected_by_sortition: 並び替えで選ばれた提案
+          sortition_reproducibility_details: 並び替えの再現性の詳細
+          time_seed: (2) タイムシード
+          witnesses: 目撃者
+        sortition: 
+          random_seed: ランダムシード
+          selected_proposals: 
+            one: せんたくあん
+            other: 選定プロポーザル
+          view: ビュー
+        sortition_author: 
+          deleted: 参加者削除
+        sortition_cancel_author: 
+          deleted: 参加者削除
+        sortitions_count: 
+          count: 
+            one: 1つのソート
+            other: "%{count} ソートーション"

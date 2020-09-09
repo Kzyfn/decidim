@@ -1,0 +1,90 @@
+ja: 
+  decidim: 
+    system: 
+      actions: 
+        confirm_destroy: 本当に削除していいんですか？
+        destroy: 削除
+        edit: 編集
+        new: 新しい
+        save: 保存
+        title: アクション
+      admins: 
+        create: 
+          error: 新しい管理者の作成に問題がありました。
+          success: Adminが正常に作成されました。
+        destroy: 
+          success: 管理者は正常に削除されました
+        edit: 
+          title: 管理者の編集
+          update: 更新情報
+        index: 
+          title: 管理者
+        new: 
+          create: 作成
+          title: 新しい管理者
+        update: 
+          error: この管理画面の更新に問題がありました。
+          success: 管理者が正常に更新
+      default_pages: 
+        placeholders: 
+          content: 管理者ダッシュボードの%{page}静的ページに意味のあるコンテンツを追加してください。
+          title: "%{page}のデフォルトタイトル"
+      menu: 
+        admins: 管理者
+        dashboard: ダッシュボード
+        organizations: 組織
+      models: 
+        admin: 
+          fields: 
+            created_at: で作成しました。
+            email: 電子メール
+          name: 管理者
+          validations: 
+            email_uniqueness: 同じメールアドレスを持つ別の管理者が既に存在している
+        organization: 
+          actions: 
+            save_and_invite: 組織を作成して管理者を招待
+          fields: 
+            created_at: で作成しました。
+            name: 名前
+            omniauth_settings: オムニアスの設定
+            smtp_settings: SMTP設定
+          name: 組織
+      organizations: 
+        create: 
+          error: 新しい組織を作ることに問題があった。
+          success: 組織の作成に成功しました。
+        edit: 
+          secondary_hosts_hint: それぞれを改行で入力
+        index: 
+          title: 組織
+        new: 
+          reference_prefix_hint: 参照プレフィックスは、一意にすべての組織全体のリソースを識別するために使用されます。
+          secondary_hosts_hint: それぞれを改行で入力
+          title: 新体制
+        omniauth_settings: 
+          enabled: 有効化された
+          facebook: 
+            app_id: アプリID
+            app_secret: アプリの秘密
+          google_oauth2: 
+            client_id: クライアントID
+            client_secret: クライアントの秘密
+          icon: アイコン
+          icon_path: アイコンパス
+          twitter: 
+            api_key: エーピーアイキー
+            api_secret: エーピーアイひみつ
+        update: 
+          error: この組織の更新に問題がありました。
+          success: 組織が正常に更新されました。
+        users_registration_mode: 
+          disabled: 外部アカウントでしかアクセスできない
+          enabled: 参加者の登録とログインを許可する
+          existing: 参加者の登録を許可せず、既存の参加者のログインを許可する
+      shared: 
+        notices: 
+          no_organization_warning_html: 開始するには組織を作成する必要があります。先に進む前に、%{guide}を必ずお読みください。
+          our_getting_started_guide: スタートガイド
+      titles: 
+        dashboard: ダッシュボード

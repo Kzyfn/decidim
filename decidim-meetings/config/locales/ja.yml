@@ -1,0 +1,451 @@
+ja:
+  activemodel:
+    attributes:
+      agenda:
+        description: 説明
+        duration: 持続時間
+        title: タイトル
+      close_meeting:
+        attendees_count: 参加者数
+        attending_organizations: 参加団体一覧
+        closing_report: 報告書
+        contributions_count: 貢献度数
+        proposal_ids: 打ち合わせで作成した提案書
+      meeting:
+        address: 住所
+        available_slots: この会議で利用可能なスロット
+        decidim_category_id: カテゴリー
+        decidim_scope_id: 範囲
+        description: 説明
+        end_time: 終了時刻
+        location: 場所
+        location_hints: 場所のヒント
+        organizer_id: オーガナイザー
+        private_meeting: プライベートミーティング
+        registration_form_enabled: 登録フォームを有効にする
+        registration_terms: 登録条件
+        registrations_enabled: 登録を有効にする
+        start_time: 開始時間
+        title: タイトル
+        transparent: 透明な
+      minutes:
+        audio_url: オーディオURL
+        description: 説明
+        video_url: ビデオURL
+        visible: 目に見える
+    errors:
+      models:
+        meeting_agenda:
+          attributes:
+            base:
+              too_many_minutes: "%{count}の議事録で会議時間を超える項目がある場合"
+              too_many_minutes_child: 項目childsの持続時間は、%{count}分で議題項目"%{parent_title}"親の持続時間を超えています。
+        meeting_registration_invite:
+          attributes:
+            email:
+              already_invited: このメールアカウントはすでに招待されています。
+    models:
+      decidim/meetings/close_meeting_event: 閉会
+      decidim/meetings/create_meeting_event: 打ち合わせ
+      decidim/meetings/meeting_registrations_enabled_event: 登録を有効にする
+      decidim/meetings/meeting_registrations_over_percentage_event: 制限を超えた登録
+      decidim/meetings/upcoming_meeting_event: 今後の会議
+      decidim/meetings/update_meeting_event: ミーティングを更新しました
+  activerecord:
+    models:
+      decidim/meetings/meeting:
+        one: 打ち合わせ
+        other: ミーティング
+      decidim/meetings/minutes:
+        one: 分数
+        other: 分数
+      decidim/meetings/registration:
+        one: 登録
+        other: 登録情報
+  decidim:
+    admin:
+      meeting_copies:
+        create:
+          error: この会議を複製することに問題がありました。
+          success: ミーティングは無事に重複しています。
+        new:
+          copy: コピー
+          select: 複製するデータを選択します。
+          title: 重複会議
+    components:
+      meetings:
+        actions:
+          join: 参加
+        name: ミーティング
+        settings:
+          global:
+            announcement: 発表
+            comments_enabled: コメントを有効にする
+            default_registration_terms: デフォルトの登録条件
+            enable_pads_creation: パッドの作成を有効にする
+            resources_permissions_enabled: 会議ごとにアクションの権限を設定可能
+          step:
+            announcement: 発表
+            comments_blocked: コメントがブロックされている
+    events:
+      meetings:
+        meeting_closed:
+          affected_user:
+            email_intro: あなたの会議 "%{resource_title}" は終了しました。そのページから結論を読むことができます。
+            email_outro: "%{resource_title}」ミーティングを開催したため、この通知が届いています。"
+            email_subject: "%{resource_title}」ミーティングは終了しました。"
+            notification_title: '<a href="%{resource_path}">%{resource_title}</a>ミーティングは終了しました。'
+          follower:
+            email_intro: "%{resource_title}」は閉会しました。そのページから結論を読むことができます。"
+            email_outro: "%{resource_title}」の会をフォローしているため、この通知が届いています。前のリンクからアンフォローできます。"
+            email_subject: "%{resource_title}」ミーティングは終了しました。"
+            notification_title: '<a href="%{resource_path}">%{resource_title}</a>ミーティングは終了しました。'
+        meeting_created:
+          email_intro: フォローしている「%{participatory_space_title}」に会議「%{resource_title}」を追加しました。
+          email_outro: "%{participatory_space_title}」をフォローしているため、この通知が届いています。前のリンクからアンフォローできます。"
+          email_subject: "%{participatory_space_title}に新しいミーティングが追加されました。"
+          notification_title: '%{participatory_space_title} に会議 <a href="%{resource_path}">%{resource_title}</a> を追加しました。'
+        meeting_registration_confirmed:
+          notification_title: '<a href="%{resource_url}">%{resource_title}</a> ミーティングへの登録が完了しました。登録コードは%{registration_code}です。'
+        meeting_registrations_over_percentage:
+          email_intro: "%{resource_title}」会議の割り当て枠は%{percentage}%以上。"
+          email_outro: この通知を受け取ったのは、あなたが会議の参加型スペースの管理者であるためです。
+          email_subject: "%{resource_title}」会議の割り当て枠は%{percentage}%を超えています。"
+          notification_title: '<a href="%{resource_path}">%{resource_title}</a>会議の割り当てられたスロットは、%{percentage}%を超えています。'
+        meeting_updated:
+          email_intro: "%{resource_title}ミーティングを更新しました。新しいバージョンはそのページから読むことができます。"
+          email_outro: "%{resource_title}」の会をフォローしているため、この通知が届いています。前のリンクからアンフォローできます。"
+          email_subject: "%{resource_title}ミーティングを更新しました。"
+          notification_title: '<a href="%{resource_path}">%{resource_title}</a>ミーティングを更新しました。'
+        registration_code_validated:
+          email_intro: "%{resource_title}」ミーティングの登録コード「%{registration_code}」が有効になりました。"
+          email_outro: "%{resource_title}」ミーティングの登録コードが有効になったため、この通知が届きました。"
+          email_subject: "%{resource_title}」ミーティングの登録コード「%{registration_code}」が有効になりました。"
+          notification_title: '<a href="%{resource_path}">%{resource_title}</a> ミーティングの登録コード "%{registration_code}" が有効になりました。'
+        registrations_enabled:
+          email_intro: "%{resource_title}」ミーティングでは、登録が可能になりました。そのページから登録できます。"
+          email_outro: "%{resource_title}」の会をフォローしているため、この通知が届いています。前のリンクからアンフォローできます。"
+          email_subject: "%{resource_title}」の会議で登録が可能になりました。"
+          notification_title: '<a href="%{resource_path}">%{resource_title}</a>ミーティングで登録が可能になりました。'
+        upcoming_meeting:
+          email_intro: "%{resource_title}」の会議が48時間以内に開始されます。"
+          email_outro: "%{resource_title}」の会をフォローしているため、この通知が届いています。前のリンクからアンフォローできます。"
+          email_subject: "%{resource_title}」の会議が48時間以内に開始されます。"
+          notification_title: '<a href="%{resource_path}">%{resource_title}の</a>会議は48時間以内に開始されます。'
+    gamification:
+      badges:
+        attended_meetings:
+          conditions:
+            - 参加したい会議に登録する
+          description: このバッジは、複数回の対面会議に参加した場合に付与されます。
+          description_another: この参加者は、%{score}のミーティングに参加しています。
+          description_own: "%{score}のミーティングに参加されています。"
+          name: 会議への参加
+          next_level_in: 次のレベルに到達するために%{score}より多くの会議に出席してください
+          unearned_another: この参加者はまだ会議に参加していません。
+          unearned_own: まだ会議に参加していないんですね。
+    meetings:
+      actions:
+        agenda: アジェンダ
+        attachment_collections: フォルダ
+        attachments: 添付ファイル
+        close: クローズ
+        confirm_destroy: この会議を削除してもよろしいですか？
+        destroy: 削除
+        edit: 編集
+        minutes: 分数
+        new: 新しい出会い
+        preview: プレビュー
+        registrations: 登録情報
+        title: アクション
+      admin:
+        agenda:
+          agenda_item:
+            add_agenda_item_child: 議題小項目の追加
+            agenda_item: 議題
+            agenda_item_children: 議題の小項目
+            down: ダウン
+            remove: 除去
+            up: ä¸Š
+          agenda_item_child:
+            agenda_item_child: 議題小項目
+            down: ダウン
+            remove: 除去
+            up: ä¸Š
+          create:
+            invalid: この議題を作ることに問題があった
+            success: アジェンダの作成に成功
+          edit:
+            title: アジェンダの編集
+            update: 更新情報
+          form:
+            add_agenda_item: 議題の追加
+            agenda_items: 議題
+            end_date: 終了日
+            start_date: 開始日
+          new:
+            create: 作成
+            title: 新しいアジェンダ
+          update:
+            invalid: この議題の更新に問題がありました
+            success: アジェンダが正常に更新されました。
+        exports:
+          meetings: ミーティング
+          registrations: 登録情報
+        invite_join_meeting_mailer:
+          invite:
+            decline: 誘いを断る
+            invited_you_to_join_a_meeting: "%{invited_by}さんが%{application}でのミーティングに招待してくれました。以下のリンクから辞退・承諾が可能です。"
+            join: ミーティングに参加する '%{meeting_title}'
+        invites:
+          create:
+            error: 参加者を招待することに問題があった。
+            success: 無事に参加者を招待しました。
+          form:
+            attendee_type: 出席者の種類
+            existing_user: 既存の参加者
+            invite: 招待状
+            invite_explanation: 参加者はもちろん、組織にも参加していただきます。
+            non_user: 既存の参加者以外の方
+            select_user: 参加者の選択
+          index:
+            filter:
+              accepted: 受け入れられた
+              all: すべての
+              rejected: 却下された
+              sent: 送信された
+            filter_by: でフィルタリング
+            invite_attendee: 参加者を招待する
+            invites: 招待状
+            registrations_disabled: 登録が無効になっているので、参加者を招待することはできません。
+            search: 検索
+        meeting_closes:
+          edit:
+            close: クローズ
+            title: クローズミーティング
+        meeting_copies:
+          form:
+            select_organizer: オーガナイザーを選択する
+        meetings:
+          close:
+            invalid: 閉会に問題があった
+            success: 会議は無事終了しました。
+          create:
+            invalid: この会議を作るのに問題があった
+            success: 会議の作成に成功しました。
+          destroy:
+            success: 会議は正常に削除されました
+          edit:
+            update: 更新情報
+          form:
+            address_help: 住所：Geocoderで場所を見つけるために使用される
+            location_help: 場所：待ち合わせ場所を暗示するユーザーへのメッセージ
+            location_hints_help: 場所のヒント：追加情報。例：建物の床
+            select_organizer: オーガナイザーを選択する
+          index:
+            title: ミーティング
+          new:
+            create: 作成
+            title: ミーティングの作成
+          service:
+            description: 説明
+            down: ダウン
+            remove: 除去
+            service: サービス
+            title: タイトル
+            up: ä¸Š
+          services:
+            add_service: サービスの追加
+            services: サービス内容
+          update:
+            invalid: この会議の更新に問題がありました
+            success: 会議が正常に更新されました
+        minutes:
+          create:
+            invalid: この議事録の作成に問題がありました。
+            success: 分数の作成に成功しました。
+          edit:
+            update: 更新情報
+          new:
+            create: 作成
+            title: 議事録の作成
+          update:
+            invalid: この議事録の更新に問題がありました
+            success: 分数は正常に更新されました
+        models:
+          meeting:
+            name: 打ち合わせ
+        registrations:
+          edit:
+            save: 保存
+            validate: バリデート
+            validate_registration_code: 登録コードの検証
+          form:
+            available_slots_help: スロットが無制限に空いている場合は0にしておきましょう。
+            invites: 招待状
+            registration_form: 登録フォーム
+            registrations_count:
+              one: "%{count}の登録がありました。"
+              other: "%{count}の登録がありました。"
+            reserved_slots_help: 予約したスロットがない場合は0にしておく
+            reserved_slots_less_than: "%{count}以下でなければなりません。"
+            title: 登録情報
+          update:
+            invalid: 登録設定の保存に問題がありました。
+            success: 会議登録の設定が正常に保存されました。
+          validate_registration_code:
+            invalid: この登録コードは無効です。
+            success: 登録コードは正常に検証されました。
+      admin_log:
+        invite:
+          create: "%{user_name}が%{space_name}空間の%{resource_name}ミーティングに%{attendee_name}を招待しました。"
+          deleted: "%{user_name}さんが%{space_name}空間での%{resource_name}ミーティングに%{attendee_name}さんをご招待しませんでした。"
+          update: "%{user_name}が%{space_name}空間の%{resource_name}ミーティングに%{attendee_name}を招待しました。"
+        meeting:
+          close: "%{user_name}は%{space_name}空間に関する%{resource_name}会議を終了しました。"
+          create: "%{user_name}は%{space_name}空間に%{resource_name}ミーティングを作成しました。"
+          delete: "%{user_name}は%{space_name}空間の%{resource_name}ミーティングを削除しました。"
+          export_registrations: "%{user_name}が%{space_name}空間の%{resource_name}ミーティングの登録をエクスポートしました。"
+          update: "%{user_name}さんが%{space_name}空間に関する%{resource_name}会議を更新しました。"
+          value_types:
+            organizer_presenter:
+              not_found: "主催者がデータベースに見つかりませんでした(ID: %{id})"
+        minutes:
+          create: "%{user_name}は、%{space_name}スペースに%{resource_name}会議の議事録を作成しました。"
+          update: "%{user_name}さんが%{space_name}スペースに関する%{resource_name}の議事録を更新しました。"
+      calendar_modal:
+        calendar_url: カレンダーURL
+        close_window: ウィンドウを閉じる
+        export_calendar: カレンダーのエクスポート
+      conference_venues: 会議場
+      content_blocks:
+        upcoming_events:
+          name: イベント情報
+          upcoming_events: 今後のミーティング
+          view_all_events: すべてを見る
+      directory:
+        meetings:
+          index:
+            all: すべての
+            date: 日付
+            meetings: ミーティング
+            past: 過去の実績
+            search: 検索
+            space_type: 参加型空間
+            upcoming: 今後の予定
+      last_activity:
+        new_meeting_at_html: "<span>%{link}で新しい出会い</span>"
+      mailer:
+        invite_join_meeting_mailer:
+          invite:
+            subject: 集会へのお誘い
+        registration_mailer:
+          confirmation:
+            subject: 会議の登録が確認されました
+      meeting:
+        not_allowed: この会議の閲覧は許可されていません。
+      meetings:
+        filters:
+          category: カテゴリー
+          category_prompt: カテゴリを選択してください
+          date: 日付
+          past: 過去の実績
+          search: 検索
+          upcoming: 今後の予定
+        filters_small_view:
+          close_modal: クローズモーダル
+          filter: フィルター
+          filter_by: でフィルタリング
+          unfold: 展開
+        meeting_minutes:
+          meeting_minutes: 議事録
+          related_information: 関連情報
+        meetings:
+          no_meetings_warning: 検索条件に合致する会議がないか、予定されている会議がない。
+          upcoming_meetings_warning: 現在、予定されている会議はありませんが、ここでは過去の会議をすべて掲載しています。
+        registration_confirm:
+          cancel: キャンセル
+          confirm: 確認
+        show:
+          attendees: 出席者数
+          contributions: 投稿数
+          going: ゴーイング
+          join: ミーティングに参加する
+          meeting_report: 会議報告
+          no_slots_available: スロットはありません。
+          organizations: 参加団体
+          registration_code_help_text: 登録コード
+          registration_state:
+            validated: 検証済み
+            validation_pending: 検証中
+          remaining_slots:
+            one: "%{count}スロット残数"
+            other: "%{count}スロット残り"
+          view: ビュー
+      meetings_map:
+        view_meeting: 会議を見る
+      models:
+        invite:
+          fields:
+            email: 電子メール
+            name: 名前
+            sent_at: 送信先
+            status: ステータス
+          status:
+            accepted: 受理されました（%{at}
+            rejected: 不合格（%{at}
+            sent: 送信された
+        meeting:
+          fields:
+            closed: 閉鎖
+            end_time: 終了日
+            map: 地図
+            start_time: 開始日
+            title: タイトル
+      read_more:
+      registration_mailer:
+        confirmation:
+          confirmed_html: '<a href="%{url}">%{title}</a>への登録が完了しました。'
+          details: 会議の詳細は添付ファイルに記載されています。
+          registration_code: 登録コードは%{code}です。
+      registrations:
+        create:
+          invalid: この会に参加することに問題がありました。
+          success: 会議に正常に参加しました。この会議に登録されているので、更新情報があった場合は通知されます。
+        decline_invitation:
+          invalid: 招待状を断ることに問題があった。
+          success: 招待状を無事に辞退しました。
+        destroy:
+          invalid: この会を去ることに問題があった。
+          success: 無事に退会しました。
+      types:
+        private_meeting: プライベートミーティング
+        transparent: 透明な
+    metrics:
+      meetings:
+        description: 作成された会議の数
+        object: 打ち合わせ
+        title: ミーティング
+    participatory_processes:
+      participatory_process_groups:
+        highlighted_meetings:
+          past_meetings: 過去のミーティング
+          upcoming_meetings: 今後のミーティング
+    participatory_spaces:
+      highlighted_meetings:
+        past_meetings: 過去のミーティング
+        see_all: すべて見る (%{count})
+        upcoming_meetings: 今後のミーティング
+      upcoming_meeting_for_card:
+        upcoming_meeting: 今後の会議
+    resource_links:
+      meetings_through_proposals:
+        meeting_result: 関連する結果となりました。
+        result_meeting: 関連する会議。
+      proposals_from_meeting:
+        meeting_proposal: 関連する提案。
+        proposal_meeting: 関連する会議。
+  devise:
+    mailer:
+      join_meeting:
+        subject: 集会へのお誘い

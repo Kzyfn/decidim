@@ -1,0 +1,88 @@
+ja: 
+  activemodel: 
+    attributes: 
+      answer: 
+        body: 回答
+      question: 
+        max_choices: 選択肢の最大数
+        question_type: タイプ
+      questionnaire_question: 
+        mandatory: 必須
+    errors: 
+      models: 
+        answer: 
+          attributes: 
+            choices: 
+              missing: 完結していない
+              too_many: 多すぎる
+        questionnaire: 
+          request_invalid: リクエストへの対応にエラーが出ています。再度お試しください。
+  decidim: 
+    forms: 
+      admin: 
+        models: 
+          components: 
+            description: 説明
+            tos: 利用規約
+        questionnaires: 
+          answer_option: 
+            answer_option: 回答の選択肢
+            free_text: フリーテキスト
+            remove: 除去
+            statement: ステートメント
+          edit: 
+            save: 保存
+            title: タイトル
+          form: 
+            add_question: 質問を追加する
+            already_answered_warning: このフォームはすでに一部のユーザーが回答しているため、質問を修正することはできません。
+          question: 
+            add_answer_option: 回答オプションの追加
+            any: 何れかの
+            description: 説明
+            down: ダウン
+            question: 質問
+            remove: 除去
+            statement: ステートメント
+            up: ä¸Š
+          update: 
+            invalid: フォームの保存に問題がありました。
+            success: フォームの保存に成功しました。
+      errors: 
+        answer: 
+          body: 身体は空白であることはできません
+      question_types: 
+        long_answer: ロングアンサー
+        multiple_option: 複数のオプション
+        short_answer: ショートアンサー
+        single_option: シングルオプション
+        sorting: 並び替え
+      questionnaires: 
+        answer: 
+          invalid: フォームの回答に問題がありました。
+          success: フォームは正常に回答されました。
+        question: 
+          max_choices: 最大の選択肢。%{n}
+        show: 
+          answer_questionnaire: 
+            anonymous_user_message: '<a href="%{sign_in_link}">アカウントで</a>サインインするか、フォームに回答するために<a href="%{sign_up_link}">サイン</a>アップしてください。'
+            title: フォームに答える
+          are_you_sure: このアクションは元に戻すことができず、回答を編集することができません。間違いありませんか？
+          questionnaire_answered: 
+            body: このフォームにはすでに回答済みです。
+            title: 回答済み
+          questionnaire_closed: 
+            body: フォームは閉じられており、回答できません。
+            title: フォームクローズ
+          questionnaire_for_private_users: 
+            body: フォームは個人の方のみご利用いただけます。
+            title: フォームクローズ
+          submit: 提出
+          tos_agreement: 参加することで、利用規約に同意します。
+      user_answers_serializer: 
+        created_at: で回答しました。
+        id: 回答ID
+        ip_hash: イップハッシュ
+        registered: 登録済み
+        unregistered: 未登録
+        user_status: ユーザーの状態

@@ -1,0 +1,106 @@
+ja: 
+  activemodel: 
+    models: 
+      decidim/comments/comment_by_followed_user_event: コメント
+      decidim/comments/comment_created_event: コメント
+      decidim/comments/reply_created_event: コメント返信
+      decidim/comments/user_mentioned_event: メンション
+  activerecord: 
+    models: 
+      decidim/comments/comment: 
+        one: コメント
+        other: コメント
+      decidim/comments/comment_vote: 
+        one: 投票
+        other: 投票
+  decidim: 
+    comments: 
+      comments: コメント
+      last_activity: 
+        new_comment_at_html: "<span>%{link}の新着コメント</span>"
+      votes: 
+        create: 
+          error: コメントの投票に問題がありました。
+    components: 
+      add_comment_form: 
+        account_message: '<a href="%{sign_in_url}">アカウントで</a>ログインするか、<a href="%{sign_up_url}">サインアップ</a>してコメントを追加してください。'
+        form: 
+          body: 
+            label: コメント
+            placeholder: これについてはどう思いますか？
+          form_error: テキストは必須で、%{length}の文字数より長くすることはできません。
+          submit: 送信
+          user_group_id: 
+            label: としてコメント
+        opinion: 
+          neutral: ニュートラル
+        remaining_characters: "%{count}の文字が残っています。"
+        remaining_characters_1: "%{count}文字左"
+        title: コメントを追加する
+      comment: 
+        alignment: 
+          against: 対して
+          in_favor: 賛成
+        deleted_user: 参加者削除
+        hide_replies: 返信を隠す
+        reply: 返事
+        report: 
+          action: 報告書
+          already_reported: このコンテンツはすでに報告されており、管理者によってレビューされます。
+          close: クローズ
+          description: この内容は不適切ですか？
+          details: 追加コメント
+          reasons: 
+            does_not_belong: 違法行為、自殺予告、個人情報、または%{organization_name}にふさわしくないと思われるものが含まれています。
+            offensive: 人種差別、性差別、中傷、個人攻撃、死亡脅迫、自殺願望、またはあらゆる形態のヘイトスピーチが含まれています。
+            spam: クリックベイト、広告、詐欺、スクリプトボットが含まれています。
+          title: 問題を報告する
+        show_replies: "%{replies_count} の返信を表示する"
+        single_comment_link_title: 単一のコメントへのリンクを取得する
+      comment_order_selector: 
+        order: 
+          best_rated: 最高の評価
+          most_discussed: 最も議論されている
+          older: 古い
+          recent: 最近の
+        title: 順番は？
+      comment_thread: 
+        title: "%{authorName}との会話"
+      comments: 
+        blocked_comments_for_user_warning: 今はコメントできませんが、以前のものは読めます。
+        blocked_comments_warning: 現時点ではコメントは無効になっていますが、以前のコメントは読むことができます。
+        comment_details_title: コメントの詳細
+        loading: コメントの読み込み中 ...
+        single_comment_warning: 残りのコメントは<a href="%{url}">こちらで</a>確認できます。
+        single_comment_warning_title: 1つのコメントが表示されています
+        title: "%{count}さんのコメント"
+    events: 
+      comments: 
+        comment_by_followed_user: 
+          email_intro: "%{author_name} さんが %{resource_title} にコメントを残しました。こちらのページで読むことができます。"
+          email_outro: "%{author_name}さんをフォローしているため、この通知を受け取りました。このユーザーのプロフィールページからフォローを解除することができます。"
+          email_subject: "%{resource_title} に %{author_name} さんの新しいコメントがあります。"
+          notification_title: '<a href="%{resource_path}">%{resource_title}</a>に<a href="%{author_path}">%{author_name} %{author_nickname}</a>さんの新しいコメントがあります。'
+        comment_created: 
+          email_intro: "%{resource_title}さんがコメントされています。こちらのページでコメントを読むことができます。"
+          email_outro: "%{resource_title}」またはその作者をフォローしているため、この通知が届いています。前のリンクからアンフォローできます。"
+          email_subject: "%{resource_title}に%{author_name}さんからの新しいコメントがあります。"
+          notification_title: '<a href="%{resource_path}">%{resource_title}</a> に <a href="%{author_path}">%{author_name} %{author_nickname}</a> さんからの新しいコメントがあります。'
+        reply_created: 
+          email_intro: "%{author_name}さんが%{resource_title}さんのコメントに返信しました。こちらのページで読むことができます。"
+          email_outro: コメントが返信されたため、この通知が届いています。
+          email_subject: "%{author_name} さんが %{resource_title} でのコメントに返信しました。"
+          notification_title: '<a href="%{author_path}">%{author_name} %{author_nickname}</a> さんが <a href="%{resource_path}">%{resource_title}</a> にコメントを返信しました。'
+        user_mentioned: 
+          email_intro: 言及されています。
+          email_outro: "%{resource_title}に記載されているため、この通知が届いています。"
+          email_subject: "%{resource_title}で言及されていますね。"
+          notification_title: '<a href="%{author_path}">%{author_name} %{author_nickname}</a>さんが<a href="%{resource_path}">%{resource_title}</a>で言及されていますね。'
+    metrics: 
+      comments: 
+        description: 参加者が作成したコメント数
+        object: 註釈
+        title: コメント
+  errors: 
+    messages: 
+      cannot_have_comments: コメントがない

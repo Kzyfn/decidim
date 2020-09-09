@@ -1,0 +1,228 @@
+ja: 
+  activemodel: 
+    attributes: 
+      config: 
+        available_methods: 利用可能な方法
+        offline: オフライン
+        offline_explanation: オフラインでの検証の指示
+        online: オンライン
+      id_document_information: 
+        document_number: 文書番号（文字入り
+        document_type: 文書の種類
+      id_document_upload: 
+        document_number: 文書番号（文字入り
+        document_type: あなたの文書の種類
+        user: 参加者
+        verification_attachment: 文書のスキャンコピー
+      offline_confirmation: 
+        email: 参加者メール
+      postal_letter_address: 
+        full_address: 住所
+      postal_letter_confirmation: 
+        verification_code: 検証コード
+      postal_letter_postage: 
+        full_address: 住所
+        verification_code: 検証コード
+  decidim: 
+    admin: 
+      menu: 
+        authorization_workflows: 検証
+    admin_log: 
+      organization: 
+        update_id_documents_config: "%{user_name}は、本人確認書類の検証設定を更新しました。"
+      user: 
+        grant_id_documents_offline_verification: "%{user_name}はオフラインの本人確認書類を使用してTKCWBWBWBGGQを検証しました。"
+    authorization_handlers: 
+      admin: 
+        csv_census: 
+          help: 
+            - 管理者は、受け入れた参加者のメールをCSVにアップロードする
+            - そのCSVファイルのメールを持っている参加者のみが検証を受けることができます。
+        id_documents: 
+          help: 
+            - ユーザーは自分のID情報を記入し、文書のコピーをアップロードします。
+            - アップロードされた画像に存在する情報を記入します。
+            - 情報はユーザーが入力したものと一致する必要があります。
+            - はっきりと確認できない場合や、検証してもらえない場合は、依頼を拒否すれば、ユーザーが修正してくれます。
+        postal_letter: 
+          help: 
+            - 参加者は、自分のアドレスに確認コードを送信するように要求します。
+            - 検証コードを記載した手紙を相手の住所に送ります。
+            - 送信された手紙に印をつけます。
+            - 送信マークを付けたら、参加者はコードを紹介して検証を受けることができるようになります。
+      csv_census: 
+        explanation: 組織の国勢調査を利用して検証を受ける
+        name: 組織の国勢調査
+      direct: 直接
+      help: ヘルプ
+      id_documents: 
+        explanation: 本人確認書類をアップロードすると、本人確認ができるようになります。
+        name: 本人確認書類
+      multistep: マルチステップ
+      name: 名前
+      postal_letter: 
+        explanation: 住所確認ができるように、入力していただくコードを添えて郵便物をお送りします。
+        name: 郵便物によるコード
+    verifications: 
+      authorizations: 
+        create: 
+          error: オーソリティの作成に問題がありました。
+          success: 無事に承認されました。
+          unconfirmed: ご自身で認証するには、メールの確認が必要です。
+        first_login: 
+          actions: 
+            another_dummy_authorization_handler: 認可ハンドラの別の例と比較して検証する
+            csv_census: 組織の国勢調査との照合
+            dummy_authorization_handler: 例の認可ハンドラと比較して検証します。
+            dummy_authorization_workflow: 認証ワークフローの例と照らし合わせて検証する
+            id_documents: 身分証明書をアップロードして確認を受ける
+            postal_letter: 郵送で検証コードを受け取って検証を受ける
+          title: 身元を確認する
+          verify_with_these_options: これらは、あなたの身元を確認するために利用可能なオプションです。
+        new: 
+          authorize: 送信
+          authorize_with: "%{authorizer}で検証"
+        skip_verification: とりあえず飛ばして%{link}
+        start_exploring: 探り出す
+      csv_census: 
+        admin: 
+          census: 
+            create: 
+              error: 国勢調査のインポートに誤りがありました。
+              success: "%{count}項目のインポートに成功（%{errors}エラー"
+            destroy_all: 
+              success: 国勢調査データはすべて削除されています
+          destroy: 
+            confirm: 国勢調査をすべて削除しても元には戻せません。本当に続けていいんですか？
+            title: すべての国勢調査データを削除する
+          index: 
+            data: "%{count}のレコードが合計で読み込まれています。最終アップロード日は%{due_date}です。"
+            empty: 国勢調査データがありません。下記のフォームからCSVファイルでインポートしてください。
+            title: 現在の国勢調査データ
+          instructions: 
+            body: そのためには、システム管理を入力し、組織にcsv_census権限を追加する必要があります。
+            title: この組織の csv census を有効にする必要があります。
+          new: 
+            file: メールデータのある.csvファイル
+            info: メールアドレスが1カラムのみのCSV形式のファイルに限ります。
+            submit: ファイルのアップロード
+            title: 新しい国勢調査のアップロード
+        authorizations: 
+          new: 
+            error: あなたのアカウントを確認できなかったか、組織の国勢調査に参加していません。
+            success: あなたのアカウントは正常に認証されました。
+      dummy_authorization: 
+        extra_explanation: 
+          one: 参加は郵便番号%{postal_codes}をお持ちの方に限らせていただきます。
+          other: 以下の郵便番号のいずれかに該当する方が参加対象となります。%{postal_codes}。
+      id_documents: 
+        admin: 
+          config: 
+            edit: 
+              title: アイデンティティ文書の設定
+              update: 更新情報
+            update: 
+              error: 設定の更新に問題がありました。
+              success: 設定が正常に更新されました
+          confirmations: 
+            create: 
+              error: 検証が一致しません。再度試してみるか、検証を拒否して、参加者が修正できるようにしてください。
+              success: 参加者の検証に成功
+            new: 
+              introduce_user_data: 写真のデータを紹介
+              reject: 拒否
+              verify: 検証
+          offline_confirmations: 
+            create: 
+              error: 検証が一致しません。再度試してみるか、参加者に修正するように伝えてください。
+              success: 参加者の検証に成功
+            new: 
+              cancel: キャンセル
+              introduce_user_data: 参加者メールと文書データの紹介
+              verify: 検証
+          pending_authorizations: 
+            index: 
+              config: 設定
+              offline_verification: オフラインでの検証
+              title: オンラインでの検証を保留中
+              verification_number: 検証 #%{n}
+          rejections: 
+            create: 
+              success: 検証が拒否されました。参加者は書類の修正を求められます。
+        authorizations: 
+          choose: 
+            choose_a_type: 検証方法を選択してください。
+            offline: オフライン
+            online: オンライン
+            title: 本人確認書類で本人確認
+          create: 
+            error: ドキュメントのアップロードに問題がありました
+            success: ドキュメントのアップロードに成功
+          edit: 
+            being_reviewed: あなたの書類を確認しています。まもなく認証されます
+            offline: オフライン検証を利用する
+            online: オンライン検証を利用する
+            rejection_clarity: アップロードされた画像に情報がはっきりと表示されていることを確認してください。
+            rejection_correctness: 入力された情報が正しいことを確認してください。
+            rejection_notice: お客様の認証に問題がありました。再度お試しください
+            send: 再度検証を依頼する
+          new: 
+            send: 検証を依頼する
+            title: 身分証明書のアップロード
+          update: 
+            error: ドキュメントの再アップロードに問題がありました
+            success: ドキュメントの再アップロードに成功
+        dni: ディーエヌアイ
+        nie: エヌアイエー
+        passport: パスポート
+      postal_letter: 
+        admin: 
+          pending_authorizations: 
+            index: 
+              address: 住所
+              letter_sent_at: で送られてきた手紙
+              mark_as_sent: 送信されたマーク
+              not_yet_sent: まだ送信されていません
+              title: 継続的な検証
+              username: ニックネーム
+              verification_code: 検証コード
+          postages: 
+            create: 
+              error: 送信されたエラーマークの手紙
+              success: 手紙は正常に送信されたとマークされています。
+        authorizations: 
+          create: 
+            error: あなたのリクエストに問題がありました
+            success: ありがとうございますあなたのアドレスに検証コードを送信します。
+          edit: 
+            send: 確認
+            title: 受け取った検証コードを紹介
+            waiting_for_letter: 近日中にあなたの住所に検証コードを記載した手紙をお送りします
+          new: 
+            send: 手紙を送る
+            title: 検証コードを要求する
+          update: 
+            error: あなたの認証コードは私たちのものと一致しません。あなたに送った手紙を再確認してください。
+            success: おめでとうございます。あなたは正常に検証されました
+      sms: 
+        authorizations: 
+          create: 
+            error: あなたのリクエストに問題がありました
+            success: ありがとうございます！あなたの携帯電話にSMSを送りました。
+          destroy: 
+            success: 認証コードは正常にリセットされました。電話番号を再入力してください。
+          edit: 
+            confirm_destroy: 本当に検証コードをリセットしますか？
+            destroy: 検証コードのリセット
+            resend: 検証コードを受信していませんか？
+            send: 確認
+            title: 受け取った検証コードを紹介
+          new: 
+            send: 私にSMSを送る
+            title: 検証コードを要求する
+          update: 
+            error: あなたの検証コードは私たちのものと一致しません。送信したSMSを再確認してください。
+            success: おめでとうございますあなたは正常に認証されました。
+  errors: 
+    messages: 
+      uppercase_only_letters_numbers: すべて大文字で、文字および/または数字のみを含む必要があります。

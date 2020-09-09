@@ -1,0 +1,30 @@
+ja: 
+  activerecord: 
+    models: 
+      decidim/pages/page: 
+        one: ページ
+        other: ページ数
+  decidim: 
+    admin_log: 
+      page: 
+        update: "%{space_name}で%{user_name}が%{resource_name}のページを更新しました。"
+    components: 
+      pages: 
+        name: ページ
+        settings: 
+          global: 
+            announcement: 発表
+          step: 
+            announcement: 発表
+    pages: 
+      admin: 
+        models: 
+          components: 
+            body: ボディ
+        pages: 
+          edit: 
+            save: 更新情報
+            title: ページを編集する
+          update: 
+            invalid: ページの保存に問題がありました。
+            success: ページの保存に成功しました。

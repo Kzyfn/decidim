@@ -1,0 +1,79 @@
+ja: 
+  activemodel: 
+    models: 
+      decidim/blogs/create_post_event: 新しいブログ記事
+  activerecord: 
+    models: 
+      decidim/blogs/post: 
+        one: 投稿
+        other: 投稿
+  decidim: 
+    blogs: 
+      actions: 
+        confirm_destroy: 本当にこの投稿を削除しますか？
+        destroy: 削除
+        edit: 編集
+        new: 新しいポスト
+        title: アクション
+      admin: 
+        models: 
+          components: 
+            body: ボディ
+          post: 
+            name: 投稿
+        posts: 
+          create: 
+            invalid: この投稿の作成に問題がありました
+            success: 投稿が正常に作成されました
+          destroy: 
+            success: 投稿の削除に成功しました
+          edit: 
+            save: 更新情報
+          index: 
+            title: 投稿
+          new: 
+            create: 作成
+            title: ポストの作成
+          update: 
+            invalid: ポストの保存に問題がありました。
+            success: 投稿が正常に保存されました
+      last_activity: 
+        new_post_at_html: "<span>%{link}」の新着記事</span>"
+      models: 
+        post: 
+          fields: 
+            author: 著者
+            body: ボディ
+            created_at: で作成しました。
+            title: 題名
+      posts: 
+        show: 
+          view: ビュー
+        sidebar_blog: 
+          comments: 註釈
+          most_commented_posts: コメント数の多い投稿
+      read_more: 続きを読む
+    components: 
+      blogs: 
+        name: ブログ
+        settings: 
+          global: 
+            announcement: 発表
+            comments_enabled: コメントを有効にする
+          step: 
+            announcement: 発表
+            comments_blocked: コメントがブロックされている
+    events: 
+      blogs: 
+        post_created: 
+          email_intro: あなたがフォローしている「%{participatory_space_title}」に「%{resource_title}」の投稿が掲載されています。
+          email_outro: "%{participatory_space_title}」をフォローしているため、この通知が届いています。前のリンクからアンフォローできます。"
+          email_subject: "%{participatory_space_title}に新しい記事を掲載しました。"
+          notification_title: '%{participatory_space_title}に<a href="%{resource_path}">%{resource_title}</a>の投稿がありました。'
+    pages: 
+      home: 
+        statistics: 
+          posts_count: 投稿
+    participatory_processes: 
+      statistics: 
+        posts_count: 投稿
